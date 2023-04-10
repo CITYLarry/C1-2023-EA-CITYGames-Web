@@ -8,12 +8,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './modules/app-material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { ErrorComponent } from './components/error/error.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { RegisterComponent } from './components/forms/register/register.component';
 
 
 
@@ -24,7 +26,9 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     HeaderComponent,
     FooterComponent,
     ErrorPageComponent,
-    ErrorComponent
+    ErrorComponent,
+    RegisterPageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],

@@ -1,0 +1,19 @@
+form {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.button-group {
+    margin: 0 auto;
+    display: inline;
+}
+
+button {
+    margin: 0 0.5rem;
+}
