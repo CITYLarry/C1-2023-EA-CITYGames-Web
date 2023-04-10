@@ -1,4 +1,5 @@
-<form>
+<form [formGroup]="registerForm">
+  <h1>Register new user</h1>
   <mat-form-field color="accent" class="form-field">
     <mat-label>Email: </mat-label>
     <input
@@ -33,9 +34,12 @@
     <mat-error *ngIf="passwordFormControl.hasError('required')">
       Password is <strong>required!</strong>
     </mat-error>
+    <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+    Password must be at least <strong>six</strong> characters
+  </mat-error>
   </mat-form-field>
   <div class="button-group">
-    <button mat-raised-button color="primary">Register</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Register</button>
     <button mat-raised-button color="warn" routerLink="/home">Go Back</button>
   </div>
 </form>

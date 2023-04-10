@@ -4,6 +4,12 @@ form {
   flex-direction: column;
 }
 
+h1 {
+  color: #fff;
+  margin: 0.5rem auto;
+  font-weight: bold;
+}
+
 .form-field {
   margin: 0 auto;
   width: 40%;
@@ -15,5 +21,5 @@ form {
 }
 
 button {
-    margin: 0 0.5rem;
+    margin: 0.3rem 0.5rem;
 }

@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { RegisterComponent } from './components/forms/register/register.component';
+import { LoginComponent } from './forms/login/login/login.component';
 
 
 
@@ -28,7 +29,8 @@ import { RegisterComponent } from './components/forms/register/register.componen
     ErrorPageComponent,
     ErrorComponent,
     RegisterPageComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
