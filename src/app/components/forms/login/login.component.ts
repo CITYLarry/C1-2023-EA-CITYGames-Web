@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { response } from 'express';
 
 @Component({
   selector: 'app-login',
@@ -18,10 +20,22 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
-  constructor() {
+  constructor(
+    private authService: AuthService
+  ) {
     this.loginForm = new FormGroup({
       email: this.emailFormControl,
       password: this.passwordFormControl,
+    });
+  }
+
+  onSubmit() {
+    this.authService.login(this.loginForm.value)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((err) => {
+      if (err) this.passwordFormControl.setErrors(new Error("Invalid email or password"))
     });
   }
 }
