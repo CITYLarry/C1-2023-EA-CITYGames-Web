@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatBadgeModule } from '@angular/material/badge';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -15,6 +16,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatFormFieldModule,
     MatInputModule,
     MatBadgeModule,
+    MatCardModule
   ],
 })
 export class AppMaterialModule {}

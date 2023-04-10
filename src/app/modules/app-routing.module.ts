@@ -4,6 +4,7 @@ import { HomeComponent } from '../pages/home/home.component';
 import { ErrorPageComponent } from '../pages/error-page/error-page.component';
 import { RegisterPageComponent } from '../pages/register-page/register-page.component';
 import { LoginPageComponent } from '../pages/login-page/login-page.component';
+import { MainPageComponent } from '../pages/main-page/main-page.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent
+    component: MainPageComponent
   },
   {
     path: "register",

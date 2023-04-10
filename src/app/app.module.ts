@@ -18,7 +18,10 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { RegisterComponent } from './components/forms/register/register.component';
 import { LoginComponent } from './components/forms/login/login.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireModule } from '@angular/fire/compat';
+import { GameListComponent } from './components/lists/game-list/game-list.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { GameCardComponent } from './components/cards/game-card/game-card.component'
 
 
 
@@ -33,7 +36,10 @@ import { AngularFireModule } from '@angular/fire/compat'
     RegisterPageComponent,
     RegisterComponent,
     LoginComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    GameListComponent,
+    MainPageComponent,
+    GameCardComponent
   ],
   imports: [
     BrowserModule,
