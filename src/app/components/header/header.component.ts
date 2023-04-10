@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  searchValue: string;
+
+  constructor() {
+    this.searchValue = "";
+  }
+
 }
