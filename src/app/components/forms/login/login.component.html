@@ -1,1 +1,45 @@
-<p>login works!</p>
+<form [formGroup]="loginForm">
+    <h1>Sing In</h1>
+    <mat-form-field color="accent" class="form-field">
+      <mat-label>Email: </mat-label>
+      <input
+        type="email"
+        matInput
+        [formControl]="emailFormControl"
+        placeholder="Insert email"
+      />
+      <mat-icon matSuffix color="accent" aria-hidden="true">mail_outline</mat-icon>
+      <mat-error
+        *ngIf="
+          emailFormControl.hasError('email') &&
+          !emailFormControl.hasError('required')
+        "
+      >
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required!</strong>
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field color="accent" class="form-field">
+      <mat-label>Password: </mat-label>
+      <input
+        type="password"
+        matInput
+        [formControl]="passwordFormControl"
+        placeholder="Insert password"
+      />
+      <mat-icon matSuffix color="accent" aria-hidden="true">vpn_key</mat-icon>
+      <mat-error *ngIf="passwordFormControl.hasError('required')">
+        Password is <strong>required!</strong>
+      </mat-error>
+      <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+      Password must be at least <strong>six</strong> characters
+    </mat-error>
+    </mat-form-field>
+    <div class="button-group">
+      <button mat-raised-button color="primary">Sing in</button>
+      <button mat-raised-button color="warn" routerLink="/home">Go Back</button>
+    </div>
+  </form>

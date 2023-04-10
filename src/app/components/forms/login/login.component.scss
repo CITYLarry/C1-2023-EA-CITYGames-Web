@@ -1,0 +1,25 @@
+form {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: #fff;
+  margin: 0.5rem auto;
+  font-weight: bold;
+}
+
+.form-field {
+  margin: 0 auto;
+  width: 40%;
+}
+
+.button-group {
+  margin: 0 auto;
+  display: inline;
+}
+
+button {
+  margin: 0.3rem 0.5rem;
+}
