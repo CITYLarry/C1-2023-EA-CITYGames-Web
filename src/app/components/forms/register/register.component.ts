@@ -31,7 +31,7 @@ export class RegisterComponent {
     this.authService
       .register(this.registerForm.value)
       .then((response) => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
       })
       .catch((err) => console.error(err));
   }

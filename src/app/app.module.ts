@@ -18,6 +18,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { RegisterComponent } from './components/forms/register/register.component';
 import { LoginComponent } from './components/forms/login/login.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AngularFireModule } from '@angular/fire/compat'
 
 
 
@@ -41,6 +42,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     AppMaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
