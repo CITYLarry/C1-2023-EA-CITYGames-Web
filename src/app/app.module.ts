@@ -22,6 +22,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { GameListComponent } from './components/lists/game-list/game-list.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { GameCardComponent } from './components/cards/game-card/game-card.component'
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -48,6 +49,7 @@ import { GameCardComponent } from './components/cards/game-card/game-card.compon
     AppMaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
