@@ -12,6 +12,6 @@ export class GameListComponent {
 
   constructor() {
     this.gamesList = [];
-    this.gamesNumber = 0;
+    this.gamesNumber = 1;
   }
 }

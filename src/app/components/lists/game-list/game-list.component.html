@@ -1,7 +1,7 @@
 <div class="game-list-container">
 
     <ng-container *ngIf="gamesNumber > 0; else noGamesFound">
-        <app-game-card *ngFor="let game of gamesList" [game]="game"></app-game-card> 
+        <app-game-card ></app-game-card> 
     </ng-container>
     <ng-template #noGamesFound>
         <h4>Nothing to show</h4>
