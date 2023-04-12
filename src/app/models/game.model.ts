@@ -3,7 +3,7 @@ export interface Game {
     title: string,
     price: string,
     edition: string,
+    cover: string,
     quantity: number,
     available: boolean,
-    categories: string[]
 }

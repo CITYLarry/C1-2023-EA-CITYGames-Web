@@ -16,9 +16,9 @@ export class GameCardComponent {
       title: '',
       price: '',
       edition: '',
+      cover: '',
       quantity: 0,
       available: false,
-      categories: [],
     };
   }
 
