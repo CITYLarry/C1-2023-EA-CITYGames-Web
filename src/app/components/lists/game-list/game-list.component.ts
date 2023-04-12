@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Game } from 'src/app/models/game.model';
 import { GameService } from 'src/app/services/game.service';
 
@@ -10,19 +11,30 @@ import { GameService } from 'src/app/services/game.service';
 export class GameListComponent implements OnInit {
   gamesList: Game[];
   gamesNumber: number;
+  pageSize: number;
+  pageIndex: number;
+  
 
   constructor(private gameService: GameService) {
     this.gamesList = [];
     this.gamesNumber = 1;
+
+    this.pageSize = 6;
+    this.pageIndex = 0;
   }
 
   ngOnInit(): void {
     this.gameService.getAll().subscribe({
       next: (data) => {
-        console.log(data);
+        this.gamesList = data;
+        this.gamesNumber = this.gamesList.length;
       },
       error: (err) => console.error('Error getting games: ' + err),
       complete: () => {},
     });
+  }
+  
+  onPageChange(event: any) {
+    this.pageIndex = event - 1;
   }
 }

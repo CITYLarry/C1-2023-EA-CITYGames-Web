@@ -1,9 +1,23 @@
-<div class="game-list-container">
-
-    <ng-container *ngIf="gamesNumber > 0; else noGamesFound">
-        <app-game-card ></app-game-card> 
-    </ng-container>
-    <ng-template #noGamesFound>
-        <h4>Nothing to show</h4>
-    </ng-template>
+<div
+  class="game-list-container"
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+>
+  <ng-container *ngIf="gamesNumber > 0; else noGamesFound">
+    <app-game-card
+      *ngFor="
+        let gamei of gamesList
+          | paginate : { itemsPerPage: pageSize, currentPage: pageIndex }
+      "
+      [game]="gamei"
+      fxFlex="clac(33.33% - 16px)"
+    ></app-game-card>
+    <div class="pagination">
+        <pagination-controls (pageChange)="pageIndex = $event"
+        ></pagination-controls>
+    </div>
+  </ng-container>
+  <ng-template #noGamesFound>
+    <h4>Nothing to show</h4>
+  </ng-template>
 </div>

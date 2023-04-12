@@ -23,6 +23,8 @@ import { GameListComponent } from './components/lists/game-list/game-list.compon
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { GameCardComponent } from './components/cards/game-card/game-card.component'
 import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -40,7 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginPageComponent,
     GameListComponent,
     MainPageComponent,
-    GameCardComponent
+    GameCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FlexLayoutModule,
+    NgxPaginationModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),

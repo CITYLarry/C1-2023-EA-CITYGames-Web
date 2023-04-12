@@ -13,7 +13,7 @@ export class GameCardComponent {
     this.game = {
       gameId: '',
       title: '',
-      yearRelease: '',
+      price: '',
       edition: '',
       quantity: 0,
       available: false,

@@ -1,7 +1,7 @@
 export interface Game {
     gameId: string,
     title: string,
-    yearRelease: string,
+    price: string,
     edition: string,
     quantity: number,
     available: boolean,
