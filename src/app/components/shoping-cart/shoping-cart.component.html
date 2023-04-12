@@ -1,34 +1,34 @@
 <div class="cart-wraper">
-  <article class="game-cart" fxLayout="row">
+  <article class="game-cart" fxLayout="row" *ngFor="let game of shopingCart$ | async">
     <div class="game-body">
-      <p>game.title</p>
+      <p>{{ game.title }}</p>
 
       <div class="game-body-info">
-        <span>$game.price</span>
-        <span>units</span>
+        <span>${{ game.price }}</span>
+        <span>{{ game.quantity }}</span>
       </div>
     </div>
     <div class="game-resume">
-      <span>game.price * units</span>
+      <span>${{ totalGame(game.price, game.quantity) }}</span>
     </div>
     <div class="game-buttons">
     <div class="game-operators">
-        <button mat-icon-button class="custom-icon-button" >
+        <button mat-icon-button class="custom-icon-button" (click)="updateUnits('add', game.gameId)">
             <mat-icon>add</mat-icon>
           </button>
-          <span>units</span>
-          <button mat-icon-button class="custom-icon-button">
+          <span>{{ game.quantity }}</span>
+          <button mat-icon-button class="custom-icon-button" (click)="updateUnits('substract', game.gameId)">
             <mat-icon>remove</mat-icon>
           </button>
     </div>
-      <button mat-icon-button class="custom-icon-button">
+      <button mat-icon-button class="custom-icon-button" (click)="removeGame(game.gameId)">
         <mat-icon>delete</mat-icon>
       </button>
     </div>
   </article>
   <mat-divider></mat-divider>
   <div class="cart-resume">
-    Total Amount: <span>$ total</span>
+    Total Amount: <span>$ {{ totalCart() }}</span>
   </div>
   <button mat-raised-button color="accent">
     <span>BUY!</span>

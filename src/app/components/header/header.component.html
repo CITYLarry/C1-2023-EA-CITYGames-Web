@@ -25,7 +25,7 @@
     <span class="spacer"></span>
 
     <button mat-icon-button (click)="onToggleCart()">
-      <mat-icon matBadge="2" matBadgeColor="warn">shopping_cart</mat-icon>
+      <mat-icon matBadge="{{cartBadget}}" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
 
     <button mat-button color="accent" routerLink="/login" *ngIf="!isSession">

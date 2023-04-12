@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Game } from 'src/app/models/game.model';
+import { ShopingCartService } from 'src/app/services/shoping-cart.service';
 
 @Component({
   selector: 'app-game-card',
@@ -9,7 +10,7 @@ import { Game } from 'src/app/models/game.model';
 export class GameCardComponent {
   @Input() game: Game;
 
-  constructor() {
+  constructor(private shopingCart: ShopingCartService) {
     this.game = {
       gameId: '',
       title: '',
@@ -19,5 +20,9 @@ export class GameCardComponent {
       available: false,
       categories: [],
     };
+  }
+
+  addToCart(game: Game) {
+    return this.shopingCart.addToCart(game);
   }
 }
