@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Game } from 'src/app/models/game.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { ShopingCartService } from 'src/app/services/shoping-cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private afAuth: AngularFireAuth,
     private authService: AuthService,
-    private shopingCart: ShopingCartService
+    private shopingCart: ShopingCartService,
+    private roter: Router
   ) {
     this.isSession = false;
 
@@ -52,7 +54,7 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.authService
       .logout()
-      .then(() => {})
+      .then(() => this.roter.navigate(['/home']))
       .catch((err) => console.error(err));
   }
 }
