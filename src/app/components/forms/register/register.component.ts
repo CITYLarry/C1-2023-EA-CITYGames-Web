@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { CustomerService } from '../../../services/customer.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,11 @@ export class RegisterComponent {
 
   registerForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private customerService: CustomerService
+  ) {
     this.registerForm = new FormGroup({
       email: this.emailFormControl,
       password: this.passwordFormControl,
@@ -28,6 +33,14 @@ export class RegisterComponent {
   }
 
   onSubmit() {
+    this.customerService.saveCustomer(this.registerForm.value).subscribe({
+      next: () => {},
+      error: (err) => {
+        console.error('Error on save customer: ' + err);
+      },
+      complete: () => {},
+    });
+
     this.authService
       .register(this.registerForm.value)
       .then((response) => {

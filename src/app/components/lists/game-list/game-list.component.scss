@@ -1,5 +1,8 @@
 .game-list-container {
+    display: flex;
+    margin: 0 auto;
     padding-bottom: 50px;
+    max-width: 900px;
 }
 
 h4 {
