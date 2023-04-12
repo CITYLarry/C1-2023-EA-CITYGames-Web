@@ -15,8 +15,8 @@
     alt="Photo of a Shiba Inu"
   />
   <mat-card-content> </mat-card-content>
-  <mat-card-actions>
-    <span>${{ game.price }}</span>
-    <button mat-button>SHARE</button>
+  <mat-card-actions fxLayoutAlign="end center">
+    <span class="game-price">${{ game.price }}</span>
+    <button mat-icon-button color="accent"><mat-icon>add_shopping_cart</mat-icon></button>
   </mat-card-actions>
 </mat-card>

@@ -1,3 +1,6 @@
+.game-list-container {
+    padding-bottom: 50px;
+}
 
 h4 {
     margin: 1rem;
@@ -8,11 +11,13 @@ h4 {
 .pagination ::ng-deep .ngx-pagination .current {
     background-color: #7b1fa2;
     color: #69f0ae;
-    border-radius: 50%;
+    font-weight: bold;
+    border-radius: 0.5rem;
 }
 
 .pagination ::ng-deep .ngx-pagination a:hover:not(.current) {
     background-color: #69f0ae;
     color: #7b1fa2;
-    border-radius: 30%;
+    font-weight: bold;
+    border-radius: 0.5rem;
 }
