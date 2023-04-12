@@ -1,0 +1,36 @@
+<div class="cart-wraper">
+  <article class="game-cart" fxLayout="row">
+    <div class="game-body">
+      <p>game.title</p>
+
+      <div class="game-body-info">
+        <span>$game.price</span>
+        <span>units</span>
+      </div>
+    </div>
+    <div class="game-resume">
+      <span>game.price * units</span>
+    </div>
+    <div class="game-buttons">
+    <div class="game-operators">
+        <button mat-icon-button class="custom-icon-button" >
+            <mat-icon>add</mat-icon>
+          </button>
+          <span>units</span>
+          <button mat-icon-button class="custom-icon-button">
+            <mat-icon>remove</mat-icon>
+          </button>
+    </div>
+      <button mat-icon-button class="custom-icon-button">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </article>
+  <mat-divider></mat-divider>
+  <div class="cart-resume">
+    Total Amount: <span>$ total</span>
+  </div>
+  <button mat-raised-button color="accent">
+    <span>BUY!</span>
+  </button>
+</div>

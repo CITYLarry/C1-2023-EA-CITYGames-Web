@@ -1,6 +1,5 @@
 <header>
   <mat-toolbar color="primary">
-
     <img
       class="icon"
       src="assets/icons/ico2.ico"
@@ -11,15 +10,21 @@
 
     <mat-form-field color="accent" class="search-form-field">
       <mat-label>Looking for a game?</mat-label>
-      <input matInput type="text" [(ngModel)]="searchValue">
-      <button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchValue=''">
+      <input matInput type="text" [(ngModel)]="searchValue" />
+      <button
+        *ngIf="searchValue"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="searchValue = ''"
+      >
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
 
     <span class="spacer"></span>
 
-    <button mat-icon-button matTooltip="Basic">
+    <button mat-icon-button (click)="onToggleCart()">
       <mat-icon matBadge="2" matBadgeColor="warn">shopping_cart</mat-icon>
     </button>
 
@@ -44,4 +49,7 @@
     </button>
   </mat-toolbar>
 </header>
+<div class="shoping-cart" [ngClass]="{ 'show-cart': viewCart }">
+  <app-shoping-cart></app-shoping-cart>
+</div>
 <router-outlet></router-outlet>

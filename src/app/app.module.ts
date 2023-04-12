@@ -25,6 +25,7 @@ import { GameCardComponent } from './components/cards/game-card/game-card.compon
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ShopingCartComponent } from './components/shoping-cart/shoping-cart.component';
 
 
 
@@ -43,6 +44,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     GameListComponent,
     MainPageComponent,
     GameCardComponent,
+    ShopingCartComponent,
   ],
   imports: [
     BrowserModule,

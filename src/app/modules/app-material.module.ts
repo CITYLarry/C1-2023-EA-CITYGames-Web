@@ -8,6 +8,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatBadgeModule,
     MatCardModule,
     MatGridListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDividerModule
   ],
 })
 export class AppMaterialModule {}
