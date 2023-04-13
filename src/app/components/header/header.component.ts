@@ -5,6 +5,7 @@ import { Game } from 'src/app/models/game.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { ShopingCartService } from 'src/app/services/shoping-cart.service';
 import { Router } from '@angular/router';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-header',
@@ -23,7 +24,8 @@ export class HeaderComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private authService: AuthService,
     private shopingCart: ShopingCartService,
-    private router: Router
+    private router: Router,
+    private searchService: SearchService
   ) {
     this.isSession = false;
 
@@ -41,7 +43,7 @@ export class HeaderComponent implements OnInit {
       this.isSession = !!user;
     });
 
-    this.shopingCart.shopingCart$.subscribe((games) => {
+    this.shopingCart$.subscribe((games) => {
       this.gamesShopingList = games;
       this.cartBadget = this.gamesShopingList.length;
     });
@@ -56,5 +58,9 @@ export class HeaderComponent implements OnInit {
       .logout()
       .then(() => this.router.navigate(['/home']))
       .catch((err) => console.error(err));
+  }
+
+  onSearch(searchValue: string) {
+    return this.searchService.updateValue(searchValue);
   }
 }

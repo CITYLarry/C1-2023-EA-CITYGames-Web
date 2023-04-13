@@ -2,6 +2,8 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Game } from 'src/app/models/game.model';
 import { GameService } from 'src/app/services/game.service';
+import { SearchService } from '../../../services/search.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-game-list',
@@ -13,27 +15,48 @@ export class GameListComponent implements OnInit {
   gamesNumber: number;
   pageSize: number;
   pageIndex: number;
-  
 
-  constructor(private gameService: GameService) {
+  searchValue$: Observable<string>;
+
+  constructor(
+    private gameService: GameService,
+    private searchSercive: SearchService
+  ) {
     this.gamesList = [];
     this.gamesNumber = 0;
 
     this.pageSize = 6;
     this.pageIndex = 0;
+
+    this.searchValue$ = searchSercive.searchValue$;
   }
 
   ngOnInit(): void {
-    this.gameService.getAll().subscribe({
-      next: (data) => {
-        this.gamesList = data;
-        this.gamesNumber = this.gamesList.length;
-      },
-      error: (err) => console.error('Error getting games: ' + err),
-      complete: () => {},
+    this.searchValue$.subscribe((value) => {
+      if (value.trim() === '') {
+        this.gameService.getAll().subscribe({
+          next: (data) => {
+            this.gamesList = data;
+            this.gamesNumber = this.gamesList.length;
+          },
+          error: (err) => console.error('Error getting games: ' + err),
+          complete: () => {},
+        });
+      } else {
+        this.gameService.getAll().subscribe({
+          next: (data) => {
+            this.gamesList = data.filter((game: Game) => {
+              return game.title.toLowerCase().startsWith(value.toLowerCase());
+            });
+            this.gamesNumber = this.gamesList.length;
+          },
+          error: (err) => console.error('Error getting games: ' + err),
+          complete: () => {},
+        });
+      }
     });
   }
-  
+
   onPageChange(event: any) {
     this.pageIndex = event - 1;
   }
