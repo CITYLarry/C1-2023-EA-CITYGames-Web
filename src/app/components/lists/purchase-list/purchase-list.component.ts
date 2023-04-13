@@ -26,7 +26,7 @@ export class PurchaseListComponent implements OnInit {
       if (user) {
         this.customerService.findCustomerByEmail(user.email).subscribe({
           next: (customer) => {
-            this.ordersList = customer.orderList;
+            this.ordersList = customer.orderList.reverse();
             this.ordersNumber = this.ordersList.length;
           },
           error: (err) => {
