@@ -1,3 +1,17 @@
+<div class="filter-games">
+  <button mat-icon-button color="accent" (click)="searchSonyGames()">
+    <img src="assets/icons/Play Station 5.ico" alt="">
+  </button>
+  <button mat-icon-button color="accent" (click)="searchMicrosoftGames()">
+    <img src="assets/icons/Xbox Series.ico" alt="">
+  </button>
+  <button mat-icon-button color="accent" (click)="searchPcGames()">
+    <img src="assets/icons/Pc.ico" alt="">
+  </button>
+  <button mat-icon-button color="warn" (click)="ngOnInit()" >
+    <mat-icon>remove_circle</mat-icon>
+  </button>
+</div>
 <div
   class="game-list-container"
   fxLayout="row wrap"

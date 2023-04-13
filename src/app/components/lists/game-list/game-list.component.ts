@@ -60,4 +60,43 @@ export class GameListComponent implements OnInit {
   onPageChange(event: any) {
     this.pageIndex = event - 1;
   }
+
+  searchSonyGames() {
+    this.gameService.getAllSonyGames().subscribe({
+      next: (games) => {
+        this.gamesList = games;
+        this.gamesNumber = this.gamesList.length;
+      },
+      error: (err) => {
+        console.error('Error on get sony games: ' + err);
+      },
+      complete: () => {}
+    });
+  }
+
+  searchMicrosoftGames() {
+    this.gameService.getAllMicrosoftGames().subscribe({
+      next: (games) => {
+        this.gamesList = games;
+        this.gamesNumber = this.gamesList.length;
+      },
+      error: (err) => {
+        console.error('Error on get Microsoft games: ' + err);
+      },
+      complete: () => {}
+    });
+  }
+
+  searchPcGames() {
+    this.gameService.getAllPcGames().subscribe({
+      next: (games) => {
+        this.gamesList = games;
+        this.gamesNumber = this.gamesList.length;
+      },
+      error: (err) => {
+        console.error('Error on get Pc games: ' + err);
+      },
+      complete: () => {}
+    });
+  }
 }

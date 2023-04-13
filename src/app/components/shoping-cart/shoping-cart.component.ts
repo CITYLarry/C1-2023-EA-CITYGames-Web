@@ -35,12 +35,12 @@ export class ShopingCartComponent {
     });
   }
 
-  totalGame(price: string, units: number) {
-    return parseFloat(price) * units;
+  totalGame(price: string , units: number) {
+    return (parseFloat(price) * units).toFixed(2);
   }
 
   totalCart() {
-    return this.shopingCart.totalCart();
+    return this.shopingCart.totalCart().toFixed(2);
   }
 
   removeGame(gameId: string) {

@@ -15,4 +15,16 @@ export class GameService {
   getAll(): Observable<any> {
     return this.httpClient.get(this.url);
   }
+
+  getAllSonyGames(): Observable<any> {
+    return this.httpClient.get(`${this.url}/sony`);
+  }
+
+  getAllMicrosoftGames(): Observable<any> {
+    return this.httpClient.get(`${this.url}/microsoft`);
+  }
+
+  getAllPcGames(): Observable<any> {
+    return this.httpClient.get(`${this.url}/pc`);
+  }
 }
