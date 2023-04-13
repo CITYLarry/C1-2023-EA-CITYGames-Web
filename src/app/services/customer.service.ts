@@ -13,7 +13,15 @@ export class CustomerService {
     this.url = 'http://localhost:8080/api/v1/customers';
   }
 
-  saveCustomer(customer: Customer): Observable<any>{
+  saveCustomer(customer: Customer): Observable<any> {
     return this.httpclient.post(this.url, customer);
+  }
+
+  findCustomerByEmail(email: string | null): Observable<any> {
+    return this.httpclient.get(this.url + `/email/${email}`);
+  }
+
+  updateCustomer(customerId: string, customer: Customer): Observable<any> {
+    return this.httpclient.put(`${this.url}/${customerId}`, customer);
   }
 }

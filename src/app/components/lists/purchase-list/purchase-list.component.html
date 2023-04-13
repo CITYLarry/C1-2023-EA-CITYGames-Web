@@ -1,1 +1,12 @@
-<p>purchase-list works!</p>
+<div
+  class="order-list-container"
+  fxLayout="col wrap"
+  fxLayoutAlign="center center"
+>
+  <ng-container *ngIf="false; else noOrdersFound">
+    <app-order-card></app-order-card>
+  </ng-container>
+  <ng-template #noOrdersFound>
+    <h4>Nothing to show, go and buy some Games!</h4>
+  </ng-template>
+</div>

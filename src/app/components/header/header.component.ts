@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private authService: AuthService,
     private shopingCart: ShopingCartService,
-    private roter: Router
+    private router: Router
   ) {
     this.isSession = false;
 
@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.authService
       .logout()
-      .then(() => this.roter.navigate(['/home']))
+      .then(() => this.router.navigate(['/home']))
       .catch((err) => console.error(err));
   }
 }

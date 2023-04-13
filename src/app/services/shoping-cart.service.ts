@@ -47,4 +47,9 @@ export class ShopingCartService {
       return acc + game.quantity * parseFloat(game.price);
     }, 0);
   }
+
+  cleanCart() {
+    this.gamesShopingList = [];
+    this.shopingCart.next(this.gamesShopingList);
+  }
 }

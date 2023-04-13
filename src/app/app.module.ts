@@ -28,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ShopingCartComponent } from './components/shoping-cart/shoping-cart.component';
 import { PurchasesPageComponent } from './pages/purchases-page/purchases-page.component';
 import { PurchaseListComponent } from './components/lists/purchase-list/purchase-list.component';
+import { OrderCardComponent } from './components/cards/order-card/order-card.component';
 
 
 
@@ -49,6 +50,7 @@ import { PurchaseListComponent } from './components/lists/purchase-list/purchase
     ShopingCartComponent,
     PurchasesPageComponent,
     PurchaseListComponent,
+    OrderCardComponent,
   ],
   imports: [
     BrowserModule,

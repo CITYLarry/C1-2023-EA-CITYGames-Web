@@ -1,5 +1,9 @@
 <div class="cart-wraper">
-  <article class="game-cart" fxLayout="row" *ngFor="let game of shopingCart$ | async">
+  <article
+    class="game-cart"
+    fxLayout="row"
+    *ngFor="let game of shopingCart$ | async"
+  >
     <div class="game-body">
       <p>{{ game.title }}</p>
 
@@ -12,16 +16,28 @@
       <span>${{ totalGame(game.price, game.quantity) }}</span>
     </div>
     <div class="game-buttons">
-    <div class="game-operators">
-        <button mat-icon-button class="custom-icon-button" (click)="updateUnits('add', game.gameId)">
-            <mat-icon>add</mat-icon>
-          </button>
-          <span>{{ game.quantity }}</span>
-          <button mat-icon-button class="custom-icon-button" (click)="updateUnits('substract', game.gameId)">
-            <mat-icon>remove</mat-icon>
-          </button>
-    </div>
-      <button mat-icon-button class="custom-icon-button" (click)="removeGame(game.gameId)">
+      <div class="game-operators">
+        <button
+          mat-icon-button
+          class="custom-icon-button"
+          (click)="updateUnits('add', game.gameId)"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+        <span>{{ game.quantity }}</span>
+        <button
+          mat-icon-button
+          class="custom-icon-button"
+          (click)="updateUnits('substract', game.gameId)"
+        >
+          <mat-icon>remove</mat-icon>
+        </button>
+      </div>
+      <button
+        mat-icon-button
+        class="custom-icon-button"
+        (click)="removeGame(game.gameId)"
+      >
         <mat-icon>delete</mat-icon>
       </button>
     </div>
@@ -30,7 +46,7 @@
   <div class="cart-resume">
     Total Amount: <span>$ {{ totalCart() }}</span>
   </div>
-  <button mat-raised-button color="accent">
+  <button mat-raised-button color="accent" (click)="onBuy()">
     <span>BUY!</span>
   </button>
 </div>
