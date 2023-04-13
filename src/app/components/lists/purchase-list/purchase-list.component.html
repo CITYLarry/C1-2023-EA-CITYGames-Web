@@ -1,10 +1,12 @@
 <div
   class="order-list-container"
-  fxLayout="col wrap"
-  fxLayoutAlign="center center"
+  fxLayout="column wrap"
 >
-  <ng-container *ngIf="false; else noOrdersFound">
-    <app-order-card></app-order-card>
+  <ng-container *ngIf="ordersNumber > 0; else noOrdersFound">
+    <app-order-card
+      *ngFor="let orderi of ordersList"
+      [order]="orderi"
+    ></app-order-card>
   </ng-container>
   <ng-template #noOrdersFound>
     <h4>Nothing to show, go and buy some Games!</h4>

@@ -1,1 +1,24 @@
-<p>order-card works!</p>
+<mat-card class="order-card">
+  <mat-card-title>Order: {{ order.createdAt }}</mat-card-title>
+  <mat-card-content fxLayout="center">
+    <div class="game-list">
+      <article
+      class="game-cart"
+      fxLayout="row"
+      *ngFor="let game of order.gameList"
+    >
+      <div class="game-body">
+        <p>{{ game.title }}</p>
+        <div class="game-body-info">
+          <span>${{ parseFloat(game.price).toFixed(2) }}</span>
+          <span>{{ game.quantity }}</span>
+        </div>
+      </div>
+    </article>
+    </div>
+    <div class="order-resume">
+      <p>Order resume: </p>
+      <span>${{ parseFloat(order.totalAmount).toFixed(2) }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

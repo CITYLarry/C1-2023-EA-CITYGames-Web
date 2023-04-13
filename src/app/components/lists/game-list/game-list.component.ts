@@ -17,7 +17,7 @@ export class GameListComponent implements OnInit {
 
   constructor(private gameService: GameService) {
     this.gamesList = [];
-    this.gamesNumber = 1;
+    this.gamesNumber = 0;
 
     this.pageSize = 6;
     this.pageIndex = 0;

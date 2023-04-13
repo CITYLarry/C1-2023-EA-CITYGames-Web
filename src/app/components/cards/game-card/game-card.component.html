@@ -11,7 +11,6 @@
     <mat-card-subtitle>{{ game.edition }}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="{{ game.cover }}" alt="{{ game.title }} cover" />
-  <mat-card-content> </mat-card-content>
   <mat-card-actions fxLayoutAlign="end center">
     <span class="game-price">${{ game.price }}</span>
     <button mat-icon-button color="accent" (click)="addToCart(game)">
